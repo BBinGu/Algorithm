@@ -10,13 +10,10 @@ public:
             if (tmp / 10 == 0) break;
             tmp /= 10;
         }
-        int i;
-        int tmpval1, tmpval2, tmpval3,tmpval4;
+        int tmpval1, tmpval2;
         tmpval1 = tmpval2 = x;
-        for ( i = 1; i <= len/2; i++) {
-            tmpval3 = tmpval1 / (int)pow(10, len - i);
-            tmpval4 = tmpval2 % 10;
-            if (tmpval3 != tmpval4) return false;
+        for (int i = 1; i <= len/2; i++) {
+            if (tmpval1 / (int)pow(10, len - i) != tmpval2 % 10) return false;
             tmpval1 = tmpval1 % (int)pow(10, len -i);
             tmpval2 = tmpval2 / 10;
 
